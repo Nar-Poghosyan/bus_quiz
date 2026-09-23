@@ -32,8 +32,8 @@ def home():
     return render_template("main.html")
 
 
-
-def submit_quiz("/submit", methods=["POST"]):
+@app.route("/submit", methods=["POST"])
+def submit_quiz():
     score = 0
 
     for  question, correct_answer in answers.items():
