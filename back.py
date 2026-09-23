@@ -33,7 +33,7 @@ def home():
 
 
 
-def submit_quiz():
+def submit_quiz("/submit", methods=["POST"]):
     score = 0
 
     for  question, correct_answer in answers.items():
