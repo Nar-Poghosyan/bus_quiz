@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Թեստի արդյունք</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #f4f5f7;
+            color: #222;
+        }
+
+        .result-card {
+            width: 90%;
+            max-width: 550px;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .result-card h1 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .result-card p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .score {
+            font-size: 64px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .percentage {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            text-decoration: none;
+            padding: 13px 24px;
+            border-radius: 8px;
+            background: #222;
+            color: white;
+            transition: 0.15s;
+        }
+
+        .button:hover {
+            background: #444;
+        }
+
+        .button.secondary {
+            background: #e8e8e8;
+            color: #222;
+        }
+
+        .button.secondary:hover {
+            background: #dcdcdc;
+        }
+
+        @media (max-width: 600px) {
+            .result-card {
+                padding: 28px 20px;
+            }
+
+            .result-card h1 {
+                font-size: 25px;
+            }
+
+            .score {
+                font-size: 52px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="result-card">
+
+    <h1>Թեստն ավարտված է</h1>
+
+    <p>Ահա քո արդյունքը</p>
+
+    <div class="score">
+        {{ score }} / {{ total }}
+    </div>
+
+    <div class="percentage">
+        {{ percentage }}
+    </div>
+
+    <div class="buttons">
+        <a href="{{ url_for('home') }}" class="button">
+            Կրկին անցնել
+        </a>
+
+        <a href="/" class="button secondary">
+            Գլխավոր էջ
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
